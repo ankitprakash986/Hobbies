@@ -11,7 +11,7 @@ public class Hobbies implements Serializable {
     @Id
     @Column(name = "hobby_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long hobbyID;
+    Long hobbyId;
     String name;
     String type;
     String description;

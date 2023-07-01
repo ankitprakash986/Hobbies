@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.capi</groupId>
-	<artifactId>Jobs</artifactId>
+	<artifactId>Hobbies</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>
 		Jobs
 	</name>
-	<description>Project for Jobs Microservice</description>
+	<description>Project for Hobbies Microservice</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.7</spring-cloud.version>

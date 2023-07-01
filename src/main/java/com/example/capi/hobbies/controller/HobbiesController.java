@@ -1,6 +1,9 @@
 package com.example.capi.hobbies.controller;
 
+import com.example.capi.hobbies.dto.HobbiesDTO;
+import com.example.capi.hobbies.dto.PersonHobbiesResponse;
 import com.example.capi.hobbies.entities.Hobbies;
+import com.example.capi.hobbies.entities.PersonHobby;
 import com.example.capi.hobbies.services.HobbiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +24,15 @@ public class HobbiesController {
         return ResponseEntity.ok("I m Working.");
     }
 
-    @GetMapping("/hobbies/{name}")
-    public ResponseEntity<List<Hobbies>> getHobbies(@PathVariable("name") String name){
-        return ResponseEntity.ok(hobbiesService.getHobbies(name));
+    @GetMapping("/hobby/{personId}")
+    public ResponseEntity<PersonHobbiesResponse> fetchHobbiesByPersonId(@PathVariable String personId){
+        return ResponseEntity.ok(hobbiesService.fetchHobbiesByPersonId(Long.parseLong(personId)));
     }
 
-    @GetMapping("/hobbies")
-    public ResponseEntity<List<Hobbies>> getHobbiesRequestParam(@RequestParam String name){
-        return ResponseEntity.ok(hobbiesService.getHobbies(name));
+    @GetMapping("hobbies/{personIds}")
+    public ResponseEntity<List<HobbiesDTO>> fetchAllHobbiesByPersonIds(@PathVariable List<Long> personIds){
+        return ResponseEntity.ok(hobbiesService.fetchAllHobbiesByPersonIds(personIds));
     }
+
 
 }
